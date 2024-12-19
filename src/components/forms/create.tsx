@@ -23,10 +23,6 @@ const SupplierForm = () => {
 
   return (
     <div className="">
-      <Title level={2} style={{ textAlign: "center", marginBottom: "1.5rem" }}>
-        Supplier Information Form
-      </Title>
-
       <Form form={form} layout="vertical" onFinish={onFinish}>
         <div className="grid grid-cols-2 gap-6">
           <Row gutter={[16, 16]}>
@@ -167,17 +163,6 @@ const SupplierForm = () => {
             </Form.Item>
           </Col>
         </div>
-
-        <Form.Item style={{ textAlign: "center", marginTop: "1.5rem" }}>
-          <Space>
-            <Button type="primary" htmlType="submit">
-              Submit
-            </Button>
-            <Button htmlType="reset" onClick={() => form.resetFields()}>
-              Reset
-            </Button>
-          </Space>
-        </Form.Item>
       </Form>
     </div>
   );

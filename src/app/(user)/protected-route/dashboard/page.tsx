@@ -282,7 +282,7 @@ const Page = (props: Props) => {
       <div>
         <Divider>IPEX Shipments, Suppliers & Purchasers</Divider>
         <div className="flex justify-end">
-          <Button type="default" icon={<PlusCircleOutlined />}>
+          <Button onClick={() => setOpen(true)} type="default" icon={<PlusCircleOutlined />}>
             Create
           </Button>
         </div>
@@ -305,13 +305,16 @@ const Page = (props: Props) => {
         />
       </div>
       <Modal
-      width={1400}
+        width={1400}
         title="Create Shipments, Suppliers & Purchasers"
         centered
         open={open}
         onOk={handleOk}
         confirmLoading={confirmLoading}
-        onCancel={handleCancel}><SupplierForm/></Modal>
+        onCancel={handleCancel}
+      >
+        <SupplierForm />
+      </Modal>
     </React.Fragment>
   );
 };
