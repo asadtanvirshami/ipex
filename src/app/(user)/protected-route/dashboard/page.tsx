@@ -290,7 +290,7 @@ const Page = (props: Props) => {
           <Checkbox.Group
             style={{ width: "100%" }}
             value={checkedList}
-            options={options as CheckboxOptionType[]}
+            options={options }
             onChange={(value) => {
               setCheckedList(value as string[]);
             }}
