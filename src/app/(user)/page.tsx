@@ -1,13 +1,14 @@
 "use client";
 import React, { useEffect, memo } from "react";
-import Router from "next/navigation";
+import { useRouter } from "next/navigation";
 import { LoadingOutlined } from "@ant-design/icons";
 import { Spin } from "antd";
 
 const Landing = () => {
+  const router = useRouter();
   const makeRoute = async () => {
     setTimeout(() => {
-      Router.redirect("/auth/signin");
+      router.push("/auth/signin");
     }, 3000);
   };
 
