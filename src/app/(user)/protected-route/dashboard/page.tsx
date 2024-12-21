@@ -16,8 +16,9 @@ import {
 } from "@ant-design/icons";
 import SupplierForm from "@/components/forms/create";
 
+type Props = {};
 
-const Page = () => {
+const Page = (props: Props) => {
   const [open, setOpen] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [dataSource, setDataSource] = useState([
@@ -98,7 +99,7 @@ const Page = () => {
     },
   ]);
 
-  const columns : any = [
+  const columns = [
     {
       title: "Supplier Name",
       dataIndex: "supplier_name",
@@ -243,7 +244,7 @@ const Page = () => {
     },
   ];
 
-  const defaultCheckedList = columns.map((item:any) => item.key);
+  const defaultCheckedList = columns.map((item) => item.key);
   const [checkedList, setCheckedList] = useState(defaultCheckedList);
 
   const handleDelete = (key: string) => {
@@ -266,26 +267,22 @@ const Page = () => {
     console.log("Clicked cancel button");
     setOpen(false);
   };
-  let options: any = columns.map(({ key, title }:any) => ({
+  const options = columns.map(({ key, title }) => ({
     label: title,
     value: key,
   }));
 
-  const newColumns = columns.map((item:any) => ({
+  const newColumns = columns.map((item) => ({
     ...item,
     hidden: !checkedList.includes(item.key as string),
   }));
-  options = { options };
+
   return (
     <React.Fragment>
       <div>
         <Divider>IPEX Shipments, Suppliers & Purchasers</Divider>
         <div className="flex justify-end">
-          <Button
-            onClick={() => setOpen(true)}
-            type="default"
-            icon={<PlusCircleOutlined />}
-          >
+          <Button onClick={() => setOpen(true)} type="default" icon={<PlusCircleOutlined />}>
             Create
           </Button>
         </div>
@@ -293,7 +290,7 @@ const Page = () => {
           <Checkbox.Group
             style={{ width: "100%" }}
             value={checkedList}
-            options={options}
+            options={options as CheckboxOptionType[]}
             onChange={(value) => {
               setCheckedList(value as string[]);
             }}
