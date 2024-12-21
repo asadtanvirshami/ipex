@@ -99,7 +99,7 @@ const Page = (props: Props) => {
     },
   ]);
 
-  const columns = [
+  const columns : any = [
     {
       title: "Supplier Name",
       dataIndex: "supplier_name",
@@ -244,7 +244,7 @@ const Page = (props: Props) => {
     },
   ];
 
-  const defaultCheckedList = columns.map((item) => item.key);
+  const defaultCheckedList = columns.map((item:any) => item.key);
   const [checkedList, setCheckedList] = useState(defaultCheckedList);
 
   const handleDelete = (key: string) => {
@@ -267,29 +267,34 @@ const Page = (props: Props) => {
     console.log("Clicked cancel button");
     setOpen(false);
   };
-  const options = columns.map(({ key, title }) => ({
+  let options: any = columns.map(({ key, title }:any) => ({
     label: title,
     value: key,
   }));
 
-  const newColumns = columns.map((item) => ({
+  const newColumns = columns.map((item:any) => ({
     ...item,
     hidden: !checkedList.includes(item.key as string),
   }));
-
+  options = { options };
   return (
     <React.Fragment>
       <div>
         <Divider>IPEX Shipments, Suppliers & Purchasers</Divider>
         <div className="flex justify-end">
-          <Button onClick={() => setOpen(true)} type="default" icon={<PlusCircleOutlined />}>
+          <Button
+            onClick={() => setOpen(true)}
+            type="default"
+            icon={<PlusCircleOutlined />}
+          >
             Create
           </Button>
         </div>
         <div className="gap-2 mt-12 mb-10 ">
           <Checkbox.Group
+            style={{ width: "100%" }}
             value={checkedList}
-            options={options as CheckboxOptionType[]}
+            options={options}
             onChange={(value) => {
               setCheckedList(value as string[]);
             }}

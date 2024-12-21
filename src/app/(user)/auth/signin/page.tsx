@@ -12,7 +12,6 @@ const SignIn = (props: Props) => {
       <div className="lg:grid bg-gradient-to-r dark:bg-white  bg-white lg:grid-cols-2 xl:grid xl:grid-cols-3 md:grid grid-cols-2 w-screen  ">
         <div className="hidden sm:flex h-screen align-middle justify-center items-center xl:col-span-2">
           <div className="justify-center align-middle items-center">
-            {/* <h1 className="mx-auto text-8xl font-bold text-rose-500"> */}
             <h1 className="mx-auto text-[13rem] font-[family-name:var(--font-geist-sans)] font-semibold  text-rose-500">
               IPEX
             </h1>
@@ -35,7 +34,12 @@ const SignIn = (props: Props) => {
                 prefix={<LockOutlined />}
               />
               <div className="float-right">
-                <Button loading={true} color="danger" size="middle" variant="solid">
+                <Button
+                  loading={true}
+                  color="danger"
+                  size="middle"
+                  variant="solid"
+                >
                   Sign In
                 </Button>
               </div>
