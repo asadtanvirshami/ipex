@@ -1,9 +1,8 @@
 import React from "react";
 import { Button, Input } from "antd";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-type Props = {};
 
-const SignIn = (props: Props) => {
+const SignIn = () => {
   return (
     <div
       data-cy="main-grid"

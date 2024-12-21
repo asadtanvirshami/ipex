@@ -16,9 +16,8 @@ import {
 } from "@ant-design/icons";
 import SupplierForm from "@/components/forms/create";
 
-type Props = {};
 
-const Page = (props: Props) => {
+const Page = () => {
   const [open, setOpen] = useState(false);
   const [confirmLoading, setConfirmLoading] = useState(false);
   const [dataSource, setDataSource] = useState([

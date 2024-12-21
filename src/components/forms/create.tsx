@@ -4,7 +4,6 @@ import {
   Input,
   Button,
   DatePicker,
-  Space,
   Row,
   Col,
   Typography,
@@ -12,7 +11,6 @@ import {
 } from "antd";
 
 const { TextArea } = Input;
-const { Title } = Typography;
 
 const SupplierForm = () => {
   const [form] = Form.useForm();
@@ -162,6 +160,9 @@ const SupplierForm = () => {
               <TextArea placeholder="Enter buyer note" />
             </Form.Item>
           </Col>
+        </div>
+        <div>
+          <Button></Button>
         </div>
       </Form>
     </div>

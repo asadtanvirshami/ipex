@@ -3,11 +3,8 @@ import React, { useState } from "react";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
-  SettingFilled,
   SettingOutlined,
-  UploadOutlined,
   UserOutlined,
-  VideoCameraOutlined,
 } from "@ant-design/icons";
 import Landing from "@/app/(user)/page";
 import { Avatar, Button, Layout, Menu, theme } from "antd";
@@ -24,13 +21,12 @@ const MainLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
-  // Extract path segments
-  const pathSegments = path.split("/").filter(Boolean); // Remove empty segments
 
-  // Helper to create accumulated paths for breadcrumb links
-  const buildLink = (index: number) => {
-    return "/" + pathSegments.slice(0, index + 1).join("/");
-  };
+  // const pathSegments = path.split("/").filter(Boolean); 
+ 
+  // const buildLink = (index: number) => {
+  //   return "/" + pathSegments.slice(0, index + 1).join("/");
+  // };
   return (
     <React.Fragment>
       {isAuthPath && <div>{children}</div>}
